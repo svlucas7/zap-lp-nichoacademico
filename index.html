@@ -64,6 +64,103 @@
       transform: translateY(0);
     }
     
+    /* Botões aprimorados */
+    .btn-primary {
+      position: relative;
+      background: linear-gradient(135deg, #00d355 0%, #00b049 100%);
+      color: white;
+      font-weight: 600;
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 25px -5px rgba(0, 211, 85, 0.25), 0 6px 16px -6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 40px -8px rgba(0, 211, 85, 0.35), 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #00e05c 0%, #00c44d 100%);
+    }
+    
+    .btn-primary:active {
+      transform: translateY(-1px) scale(1.01);
+    }
+    
+    .btn-secondary {
+      position: relative;
+      background: transparent;
+      color: #00d355;
+      font-weight: 600;
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      border: 2px solid #00d355;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    
+    .btn-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #00d355 0%, #00b049 100%);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    
+    .btn-secondary:hover::before {
+      width: 100%;
+    }
+    
+    .btn-secondary:hover {
+      color: white;
+      border-color: #00d355;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px -5px rgba(0, 211, 85, 0.25), 0 8px 16px -6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-small {
+      font-size: 0.875rem;
+      padding: 0.75rem 1.5rem;
+    }
+    
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-icon svg {
+      transition: transform 0.3s ease;
+    }
+    
+    .btn-icon:hover svg {
+      transform: translateX(2px);
+    }
+    
     /* Animação melhorada para imagem do hero */
     .hero-image-container {
       perspective: 1000px;
@@ -92,6 +189,9 @@
       }
       .animate-float, .animate-slide-up, .animate-fade-in {
         animation: none !important;
+      }
+      .btn-primary, .btn-secondary {
+        transform: none !important;
       }
     }
   </style>
@@ -127,7 +227,7 @@
             </li>
             <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#sobre">Sobre Nós</a></li>
             <li>
-              <a class="bg-zapGreen text-white px-6 py-3 rounded-full font-semibold hover:bg-zapGreen/90 transition-colors duration-300 shadow-lg hover:shadow-xl" href="#contato">
+              <a class="btn-primary btn-small" href="#contato">
                 Solicitar Orçamento
               </a>
             </li>
@@ -150,7 +250,7 @@
           </li>
           <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#sobre">Sobre Nós</a></li>
           <li class="pt-2">
-            <a class="block bg-zapGreen text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-zapGreen/90 transition-colors" href="#contato">
+            <a class="btn-primary btn-small block text-center" href="#contato">
               Solicitar Orçamento
             </a>
           </li>
@@ -176,10 +276,10 @@
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#cardapio" class="bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                ➡ Explore nosso cardápio virtual
+              <a href="#cardapio" class="btn-primary btn-icon">
+                <span>➡ Explore nosso cardápio virtual</span>
               </a>
-              <a href="#contato" class="border-2 border-zapGreen text-zapGreen px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen hover:text-white transition-all duration-300">
+              <a href="#contato" class="btn-secondary">
                 Solicitar Orçamento
               </a>
             </div>
@@ -276,9 +376,9 @@
 
             <!-- CTA -->
             <div>
-              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contato" class="btn-primary btn-icon">
                 <span>Solicitar Orçamento para Convites</span>
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </a>
@@ -361,9 +461,9 @@
 
             <!-- CTA -->
             <div>
-              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contato" class="btn-primary btn-icon">
                 <span>Solicitar Orçamento para Decoração</span>
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </a>
@@ -430,9 +530,9 @@
 
             <!-- CTA -->
             <div>
-              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contato" class="btn-primary btn-icon">
                 <span>Solicitar Orçamento para Lembranças</span>
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </a>
@@ -515,9 +615,9 @@
 
             <!-- CTA -->
             <div>
-              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contato" class="btn-primary btn-icon">
                 <span>Solicitar Orçamento para Experiências</span>
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </a>
@@ -584,9 +684,9 @@
 
             <!-- CTA -->
             <div>
-              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contato" class="btn-primary btn-icon">
                 <span>Conhecer Soluções Corporativas</span>
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </a>
@@ -637,7 +737,7 @@
 -->
             <!-- CTA -->
             <div>
-              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#contato" class="btn-primary">
                 <span>Vamos Conversar</span>
                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -727,7 +827,7 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="bg-zapGreen text-white px-12 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <button type="submit" class="btn-primary">
                 Enviar Solicitação de Orçamento
               </button>
             </div>
