@@ -64,12 +64,34 @@
       transform: translateY(0);
     }
     
+    /* Animação melhorada para imagem do hero */
+    .hero-image-container {
+      perspective: 1000px;
+    }
+    
+    .hero-image-container:hover .hero-background-1 {
+      transform: rotate(3deg) scale(1.02);
+    }
+    
+    .hero-image-container:hover .hero-background-2 {
+      transform: rotate(-1deg) scale(1.01);
+      opacity: 0.9;
+    }
+    
+    .hero-image-container:hover .hero-main-image {
+      transform: rotate(0deg) scale(1.05) translateZ(50px);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+    }
+    
     /* Fallback para garantir visibilidade */
     @media (prefers-reduced-motion: reduce) {
       .reveal {
         opacity: 1;
         transform: translateY(0);
         transition: none;
+      }
+      .animate-float, .animate-slide-up, .animate-fade-in {
+        animation: none !important;
       }
     }
   </style>
@@ -163,9 +185,10 @@
             </div>
           </div>
           <div class="flex justify-center lg:justify-end animate-slide-up">
-            <div class="relative">
-              <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-6 animate-float"></div>
-              <img src="public/assets/images/inicio.svg" alt="Personalização que transforma eventos" class="relative w-full max-w-lg h-auto rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"/>
+            <div class="relative hero-image-container group">
+              <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-6 animate-float hero-background-1 transition-all duration-700"></div>
+              <div class="absolute inset-0 bg-zapGreen/5 rounded-3xl transform -rotate-2 animate-float opacity-50 hero-background-2 transition-all duration-500" style="animation-delay: 0.5s;"></div>
+              <img src="public/assets/images/images/Personalização que transforma.png" alt="Personalização que transforma eventos" class="relative w-full max-w-lg h-auto rounded-3xl shadow-2xl transform -rotate-3 hero-main-image transition-all duration-700"/>
             </div>
           </div>
         </div>
