@@ -7,21 +7,29 @@ if (menuBtn && mobileMenu) {
   });
 }
 
-// Smooth reveal on scroll
+// Smooth reveal on scroll with modern animations
 function handleReveal(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('opacity-100', 'translate-y-0');
-      entry.target.classList.remove('opacity-0', 'translate-y-4');
+      entry.target.classList.add('animate-fade-in');
       observer.unobserve(entry.target);
     }
   });
 }
 
-const io = new IntersectionObserver(handleReveal, { threshold: 0.15 });
-Array.from(document.querySelectorAll('.reveal')).forEach(el => {
-  el.classList.add('opacity-0', 'translate-y-4', 'transition', 'duration-700');
-  io.observe(el);
+const revealObserver = new IntersectionObserver(handleReveal, { 
+  threshold: 0.1,
+  rootMargin: '50px 0px -50px 0px'
+});
+
+// Apply reveal animation to all elements with .reveal class
+document.addEventListener('DOMContentLoaded', () => {
+  const revealElements = document.querySelectorAll('.reveal');
+  revealElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    revealObserver.observe(el);
+  });
 });
 
 // Current year in footer
@@ -32,36 +40,59 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const params = new URLSearchParams(window.location.search);
 const form = document.getElementById('orcamento-form');
 const formMsg = document.getElementById('formMsg');
-if (params.get('sucesso') === '1' && formMsg) {
-  formMsg.className = 'mt-3 text-green-700 bg-green-50 border border-green-200 rounded-md p-3';
-  formMsg.textContent = 'Obrigado! Recebemos seu pedido e retornaremos em breve.';
-}
-// Se quiser usar handler manual (sem Netlify), remova data-netlify do form no HTML e descomente abaixo
-// if (form) {
-//   form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     if (formMsg) {
-//       formMsg.className = 'mt-3 text-green-700 bg-green-50 border border-green-200 rounded-md p-3';
-//       formMsg.textContent = 'Obrigado! Em breve entraremos em contato.';
-//     }
-//     form.reset();
-//   });
-// }
 
-// Image fallback: aplica a todas as imagens externas que falharem
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('img').forEach(img => {
-    const isExternal = /^https?:\/\//.test(img.src);
-    if (isExternal) {
-      const w = img.getAttribute('width') || 1200;
-      const h = img.getAttribute('height') || 650;
-      const place = `https://placehold.co/${w}x${h}?text=Imagem+indispon%C3%ADvel`;
-      img.addEventListener('error', () => {
-        if (!img.dataset.fallbackApplied) {
-          img.dataset.fallbackApplied = '1';
-          img.src = place;
-        }
-      }, { once: true });
+if (params.get('sucesso') === '1' && formMsg) {
+  formMsg.className = 'mt-6 text-center text-zapGreen bg-zapGreen/10 border border-zapGreen/20 rounded-xl p-4';
+  formMsg.textContent = '✅ Obrigado! Recebemos seu pedido e retornaremos em breve.';
+  formMsg.classList.remove('hidden');
+}
+
+// Smooth scroll enhancement for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const headerHeight = 80; // Height of fixed header
+      const targetPosition = target.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if open
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
     }
   });
 });
+
+// Enhanced card hover effects
+document.querySelectorAll('.card-hover').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'translateY(-8px) scale(1.02)';
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'translateY(0) scale(1)';
+  });
+});
+
+// Add loading states to form submission
+if (form) {
+  form.addEventListener('submit', function(e) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Enviando...';
+      
+      // Re-enable after a delay (in case of errors)
+      setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Enviar Solicitação de Orçamento';
+      }, 5000);
+    }
+  });
+}

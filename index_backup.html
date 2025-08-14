@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zap Gráfica | Personalização que Transforma</title>
+  <meta name="description" content="Especialistas em personalização para eventos e linha corporativa. Design profissional, qualidade excepcional e prazos garantidos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN + config personalizada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            zapGreen: '#00d355',
+            zapGray: '#4d4d4f',
+            lightGray: '#f8f9fa',
+            darkGray: '#2c2c2e'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'float': 'float 3s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .section-gradient { background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); }
+    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300d355'/><text x='50' y='58' text-anchor='middle' font-size='48' fill='white' font-family='Inter, sans-serif' font-weight='700'>Z</text></svg>">
+</head>
+<body class="min-h-full font-sans text-zapGray bg-white">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between">
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <img src="public/assets/images/images/LOGO-VERDE.png" alt="Zap Gráfica" class="h-12 w-auto transition-transform group-hover:scale-105"/>
+          <span class="font-bold text-xl tracking-tight hidden sm:inline text-zapGray">Zap Gráfica</span>
+        </a>
+        <nav class="hidden lg:block">
+          <ul class="flex items-center gap-8 text-sm font-medium text-zapGray">
+            <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#inicio">Início</a></li>
+            <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#personalizacao">Personalização</a></li>
+            <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#corporativa">Linha Corporativa</a></li>
+            <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#sobre">Sobre Nós</a></li>
+            <li>
+              <a class="bg-zapGreen text-white px-6 py-3 rounded-full font-semibold hover:bg-zapGreen/90 transition-colors duration-300 shadow-lg hover:shadow-xl" href="#contato">
+                Solicitar Orçamento
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button id="menuBtn" aria-label="Abrir menu" class="lg:hidden inline-flex items-center justify-center rounded-full p-3 text-zapGray hover:text-zapGreen hover:bg-lightGray transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <nav id="mobileMenu" class="lg:hidden hidden pb-6">
+        <ul class="grid gap-1 text-base font-medium text-zapGray">
+          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#inicio">Início</a></li>
+          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#personalizacao">Personalização</a></li>
+          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#corporativa">Linha Corporativa</a></li>
+          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#sobre">Sobre Nós</a></li>
+          <li class="pt-2">
+            <a class="block bg-zapGreen text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-zapGreen/90 transition-colors" href="#contato">
+              Solicitar Orçamento
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Seção Início / Hero -->
+    <section id="inicio" class="relative min-h-screen flex items-center section-gradient overflow-hidden">
+      <div class="absolute inset-0 bg-white/50"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="text-center lg:text-left space-y-8 animate-fade-in">
+            <div class="space-y-6">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-zapGray">
+                Personalização que
+                <span class="text-zapGreen block">Transforma</span>
+              </h1>
+              <p class="text-xl lg:text-2xl text-zapGray/80 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Especialistas em criar experiências únicas para eventos e soluções corporativas. 
+                Design profissional, qualidade excepcional e prazos garantidos.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="#personalizacao" class="bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Explore Nossos Serviços
+              </a>
+              <a href="#contato" class="border-2 border-zapGreen text-zapGreen px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen hover:text-white transition-all duration-300">
+                Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center lg:justify-end animate-slide-up">
+            <div class="relative">
+              <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-6 animate-float"></div>
+              <img src="public/assets/images/inicio.svg" alt="Personalização que transforma eventos" class="relative w-full max-w-lg h-auto rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Indicador de scroll -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#personalizacao" class="flex flex-col items-center text-zapGray/60 hover:text-zapGreen transition-colors">
+          <span class="text-sm font-medium mb-2">Descubra mais</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Seção Personalização de Eventos -->
+    <section id="personalizacao" class="py-20 lg:py-32 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-16 lg:mb-20 reveal">
+          <h2 class="text-3xl lg:text-5xl font-bold text-zapGray mb-6">
+            Personalização de 
+            <span class="text-zapGreen">Eventos</span>
+          </h2>
+          <p class="text-xl text-zapGray/70 max-w-3xl mx-auto font-light leading-relaxed">
+            Transformamos suas ideias em experiências inesquecíveis. Cada detalhe é pensado para criar momentos únicos e memoráveis.
+          </p>
+        </div>
+
+        <!-- Grid de serviços -->
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-12">
+          <!-- Convites & Identidade Visual -->
+          <div class="text-center reveal card-hover group">
+            <div class="bg-lightGray rounded-3xl p-8 mb-6 group-hover:bg-zapGreen/5 transition-colors duration-500">
+              <img src="public/assets/images/images/Convites - Identidade Visual.png" alt="Convites e Identidade Visual" class="w-full h-48 object-contain mx-auto"/>
+            </div>
+            <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
+              Convites & Identidade
+            </h3>
+            <p class="text-zapGray/70 leading-relaxed">
+              Primeira impressão que marca. Convites elegantes, save the date e toda identidade visual do seu evento.
+            </p>
+          </div>
+
+          <!-- Decoração & Ambientação -->
+          <div class="text-center reveal card-hover group">
+            <div class="bg-lightGray rounded-3xl p-8 mb-6 group-hover:bg-zapGreen/5 transition-colors duration-500">
+              <img src="public/assets/images/images/Decoração - Ambientação.png" alt="Decoração e Ambientação" class="w-full h-48 object-contain mx-auto"/>
+            </div>
+            <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
+              Decoração & Ambientação
+            </h3>
+            <p class="text-zapGray/70 leading-relaxed">
+              Transforme espaços em cenários únicos. Banners, totens, placas e elementos que criam atmosfera especial.
+            </p>
+          </div>
+
+          <!-- Lembranças & Brindes -->
+          <div class="text-center reveal card-hover group">
+            <div class="bg-lightGray rounded-3xl p-8 mb-6 group-hover:bg-zapGreen/5 transition-colors duration-500">
+              <img src="public/assets/images/images/Lembranças - Brindes.png" alt="Lembranças e Brindes" class="w-full h-48 object-contain mx-auto"/>
+            </div>
+            <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
+              Lembranças & Brindes
+            </h3>
+            <p class="text-zapGray/70 leading-relaxed">
+              Presentes que eternizam momentos. Canecas, almofadas, bem-casados e muito mais para seus convidados.
+            </p>
+          </div>
+
+          <!-- Interatividade & Experiência -->
+          <div class="text-center reveal card-hover group">
+            <div class="bg-lightGray rounded-3xl p-8 mb-6 group-hover:bg-zapGreen/5 transition-colors duration-500">
+              <img src="public/assets/images/images/Interatividade - Experiência.png" alt="Interatividade e Experiência" class="w-full h-48 object-contain mx-auto"/>
+            </div>
+            <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
+              Interatividade & Experiência
+            </h3>
+            <p class="text-zapGray/70 leading-relaxed">
+              Surpreenda seus convidados. Tatuagens temporárias, pulseiras, crachás e experiências inovadoras.
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-16 reveal">
+          <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <span>Solicitar Orçamento Personalizado</span>
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Linha Corporativa -->
+    <section id="corporativa" class="py-20 lg:py-32 section-gradient">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Imagem -->
+          <div class="order-2 lg:order-1 reveal">
+            <div class="relative">
+              <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform -rotate-3 animate-float"></div>
+              <img src="public/assets/images/images/Linha Corporativa.png" alt="Linha Corporativa" class="relative w-full h-auto rounded-3xl shadow-2xl"/>
+            </div>
+          </div>
+          
+          <!-- Conteúdo -->
+          <div class="order-1 lg:order-2 space-y-8 reveal">
+            <div class="space-y-6">
+              <h2 class="text-3xl lg:text-5xl font-bold text-zapGray">
+                Linha
+                <span class="text-zapGreen">Corporativa</span>
+              </h2>
+              <p class="text-xl text-zapGray/70 font-light leading-relaxed">
+                Fortaleça a identidade da sua empresa com soluções personalizadas que impressionam clientes e colaboradores.
+              </p>
+            </div>
+
+            <!-- Lista de serviços -->
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="bg-zapGreen/10 rounded-full p-2 mt-1">
+                  <svg class="w-5 h-5 text-zapGreen" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-zapGray">Brindes Corporativos</h4>
+                  <p class="text-zapGray/70">Canetas, cadernos, pastas e materiais personalizados</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="bg-zapGreen/10 rounded-full p-2 mt-1">
+                  <svg class="w-5 h-5 text-zapGreen" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-zapGray">Kits de Apresentação</h4>
+                  <p class="text-zapGray/70">Materiais profissionais que destacam sua marca</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="bg-zapGreen/10 rounded-full p-2 mt-1">
+                  <svg class="w-5 h-5 text-zapGreen" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-zapGray">Soluções Sustentáveis</h4>
+                  <p class="text-zapGray/70">Produtos eco-friendly para empresas conscientes</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div>
+              <a href="#contato" class="inline-flex items-center bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <span>Conhecer Soluções Corporativas</span>
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>    <!-- Categoria: Decoração & Ambientação -->
+    <section id="decoracao" class="scroll-mt-28 py-12 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <div class="flex items-center gap-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-zapBlue/10 text-zapBlue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M4 5h16v2H4zm0 4h16v10H4z"/></svg></span><h3 class="text-2xl md:text-3xl font-extrabold">Decoração & Ambientação</h3></div>
+          <p class="mt-3 text-gray-700 max-w-3xl">Transforme o espaço do seu evento em um cenário único. Nossos itens de ambientação personalizam cada detalhe, criando experiências visuais inesquecíveis.</p>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Placas de boas-vindas</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapBlue"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M4.5 17.25 9 12l3 3 7.5-7.5" /></svg><h4 class="font-semibold">Adesivos de chão / pista</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M3 5h18v12H3zM5 18h14v1H5z"/></svg><h4 class="font-semibold">Banners e backdrops</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M7 4h10v16H7z"/></svg><h4 class="font-semibold">Totens e painéis de foto</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h6v12H4zM14 6h6v12h-6z"/></svg><h4 class="font-semibold">Adesivos para espelhos e vidros</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M7 10a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z"/></svg><h4 class="font-semibold">Balões personalizados</h4></div></div>
+          <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapBlue"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M6 16h12M6 8h12" /></svg><h4 class="font-semibold">Plaquinhas para fotos</h4></div></div>
+        </div>
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Cenário decorado com elementos de ambientação para eventos" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- Categoria: Lembranças & Brindes -->
+    <section id="brindes" class="scroll-mt-28 py-12 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <div class="flex items-center gap-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-zapOrange/10 text-zapOrange"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z"/></svg></span><h3 class="text-2xl md:text-3xl font-extrabold">Lembranças & Brindes</h3></div>
+          <p class="mt-3 text-gray-700 max-w-3xl">Presenteie seus convidados com lembranças que eternizam o momento. Cada brinde é pensado para transmitir carinho e deixar um toque especial na memória.</p>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapOrange"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Bem-casados com embalagem personalizada</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M5 7h14v10H5z"/></svg><h4 class="font-semibold">Caixinhas de doces</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M7 5h4v14H7zM13 9h4v10h-4z"/></svg><h4 class="font-semibold">Canecas e taças</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M8 4h8v16H8z"/></svg><h4 class="font-semibold">Copos long drink / shots</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M7 10a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z"/></svg><h4 class="font-semibold">Almofadas</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M6 7h12v10H6z"/></svg><h4 class="font-semibold">Chinelos</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapOrange"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 9.75 7.5 19.5 3 15"/></svg><h4 class="font-semibold">Chaveiros</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M6 6h12v12H6z"/></svg><h4 class="font-semibold">Aromatizadores</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M8 4h8v16H8z"/></svg><h4 class="font-semibold">Sabonetes artesanais</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M12 4l8 16H4z"/></svg><h4 class="font-semibold">Velas aromáticas</h4></div></div>
+          <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Saquinhos de organza</h4></div></div>
+          <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Embalagens para doces e lembranças</h4></div></div>
+        </div>
+  <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1600&q=80" alt="Lembranças e brindes personalizados expostos em mesa" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- Categoria: Interatividade & Experiência -->
+    <section id="interatividade" class="scroll-mt-28 py-12 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <div class="flex items-center gap-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-zapPurple/10 text-zapPurple"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Zm-1-13h2v6h-2Zm0 8h2v2h-2Z"/></svg></span><h3 class="text-2xl md:text-3xl font-extrabold">Interatividade & Experiência</h3></div>
+          <p class="mt-3 text-gray-700 max-w-3xl">Proporcione momentos inesquecíveis com nossas opções de interatividade. Surpreenda seus convidados com experiências únicas que vão além do esperado.</p>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Tatuagens temporárias personalizadas</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Pulseiras de identificação</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Crachás personalizados</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Kit de sobrevivência para eventos</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Experiências de realidade aumentada</h4></div></div>
+        </div>
+  <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1600&q=80" alt="Itens interativos e de experiência para animar convidados" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- Categoria: Linha Corporativa -->
+    <section id="corporativa" class="scroll-mt-28 py-12 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <div class="flex items-center gap-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-zapBlue/10 text-zapBlue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M4 5h16v2H4zm0 4h16v10H4z"/></svg></span><h3 class="text-2xl md:text-3xl font-extrabold">Linha Corporativa</h3></div>
+          <p class="mt-3 text-gray-700 max-w-3xl">Soluções personalizadas para fortalecer a identidade da sua empresa em eventos. De brindes a materiais de divulgação, temos o que você precisa.</p>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Brindes corporativos personalizados</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M6 6h12v2H6zM6 10h12v2H6zM6 14h8v2H6z"/></svg><h4 class="font-semibold">Kits de apresentação</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 4h16v16H4z"/></svg><h4 class="font-semibold">Pastas e fichários personalizados</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4zM8 10h8v2H8zM8 14h5v2H8z"/></svg><h4 class="font-semibold">Cadernos e blocos de notas</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Canetas e lapiseiras</h4></div></div>
+          <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Brindes sustentáveis</h4></div></div>
+          <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4zM8 10h8v2H8zM8 14h5v2H8z"/></svg><h4 class="font-semibold">Pasta para notebook</h4></div></div>
+        </div>
+  <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1600&q=80" alt="Materiais corporativos personalizados e elegantes" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="scroll-mt-28 py-16 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Sobre Nós</h2>
+            <p class="mt-3 text-gray-700 max-w-prose">
+              Somos a Zap Gráfica: especialistas em personalização para eventos. Atendemos cerimonialistas que buscam qualidade, prazos alinhados e um parceiro confiável do briefing à entrega. Nossa missão é transformar ideias em produtos que encantam e dão identidade às celebrações.
+            </p>
+          </div>
+          <div class="reveal">
+            <img src="src/images/hero.svg" alt="Equipe trabalhando em materiais personalizados" class="w-full rounded-xl shadow-sm ring-1 ring-black/5" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solicitar Orçamento -->
+    <section id="orcamento" class="scroll-mt-28 py-16 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Solicitar Orçamento</h2>
+          <p class="mt-2 text-gray-600">Preencha os campos e retornaremos rapidamente com valores e prazos.</p>
+        </div>
+        <form id="orcamento-form" name="orcamento" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?sucesso=1" class="reveal mt-8 grid gap-4 max-w-2xl">
+          <input type="hidden" name="form-name" value="orcamento" />
+          <p class="hidden">
+            <label>Não preencha: <input name="bot-field" /></label>
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Nome</label>
+              <input required name="nome" type="text" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">E-mail</label>
+              <input required name="email" type="email" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" placeholder="voce@empresa.com" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="sm:col-span-1">
+              <label class="block text-sm font-medium text-gray-700">Tipo de evento</label>
+              <input name="tipo" type="text" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" placeholder="Casamento, 15 anos, corporativo..." />
+            </div>
+            <div class="sm:col-span-1">
+              <label class="block text-sm font-medium text-gray-700">Data</label>
+              <input name="data" type="date" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" />
+            </div>
+            <div class="sm:col-span-1">
+              <label class="block text-sm font-medium text-gray-700">Quantidade estimada</label>
+              <input name="quantidade" type="number" min="1" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" placeholder="Ex.: 150" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Itens desejados</label>
+            <input name="itens" type="text" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" placeholder="Convites, tags, lembranças, etc." />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Observações</label>
+            <textarea name="observacoes" rows="4" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-zapGreen focus:ring-zapGreen" placeholder="Detalhes importantes, prazos, referências..."></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-zapGreen px-5 py-3 text-white font-semibold shadow-sm transition-colors duration-200 hover:bg-zapBlue focus:outline-none focus:ring-2 focus:ring-zapGreen/40 w-fit">Enviar pedido de orçamento</button>
+          <div id="formMsg" class="hidden" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Seção Contato (placeholder) -->
+    <section id="contato" class="scroll-mt-28 py-16 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center">
+          <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Contato</h2>
+          <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Contato a definir. Em breve adicionaremos os canais oficiais. Enquanto isso, utilize as redes sociais no rodapé.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-semibold text-white">Sobre a Zap Gráfica</h4>
+          <p class="mt-3 text-sm">Sua descrição aqui. Fale sobre a missão, visão e valores da Zap Gráfica.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Navegação</h4>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a class="hover:text-white" href="#cardapio">Cardápio Virtual</a></li>
+            <li><a class="hover:text-white" href="#sobre">Sobre Nós</a></li>
+            <li><a class="hover:text-white" href="#orcamento">Solicitar Orçamento</a></li>
+            <li><a class="hover:text-white" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Redes Sociais</h4>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a class="hover:text-white" href="#">Facebook</a></li>
+            <li><a class="hover:text-white" href="#">Instagram</a></li>
+            <li><a class="hover:text-white" href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Contato</h4>
+          <p class="mt-3 text-sm">Email: contato@zapgrafica.com.br</p>
+          <p class="text-sm">Telefone: (11) 1234-5678</p>
+        </div>
+      </div>
+      <div class="mt-10 border-t border-gray-700 pt-8 text-center text-xs">
+        <p>© <span id="year">2025</span> Zap Gráfica. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="public/main.js" type="module"></script>
+</body>
+</html>
