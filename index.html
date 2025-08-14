@@ -82,13 +82,12 @@
       <div class="flex h-20 items-center justify-between">
         <a href="#inicio" class="flex items-center gap-3 group">
           <img src="public/assets/images/images/LOGO-VERDE.png" alt="Zap Gráfica" class="h-12 w-auto transition-transform group-hover:scale-105"/>
-          <span class="font-bold text-xl tracking-tight hidden sm:inline text-zapGray">Zap Gráfica</span>
         </a>
         <nav class="hidden lg:block">
           <ul class="flex items-center gap-8 text-sm font-medium text-zapGray">
             <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#inicio">Início</a></li>
             <li class="relative group">
-              <a class="hover:text-zapGreen transition-colors duration-300 py-2 flex items-center gap-1" href="#convites">
+              <a class="hover:text-zapGreen transition-colors duration-300 py-2 flex items-center gap-1" href="#cardapio">
                 Cardápio Virtual
                 <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -119,7 +118,7 @@
       <nav id="mobileMenu" class="lg:hidden hidden pb-6">
         <ul class="grid gap-1 text-base font-medium text-zapGray">
           <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#inicio">Início</a></li>
-          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#convites">Cardápio Virtual</a></li>
+          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#cardapio">Cardápio Virtual</a></li>
           <li class="pl-4">
             <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#convites">• Convites & Identidade Visual</a>
             <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#decoracao">• Decoração & Ambientação</a>
@@ -155,7 +154,7 @@
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#convites" class="bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#cardapio" class="bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 ➡ Explore nosso cardápio virtual
               </a>
               <a href="#contato" class="border-2 border-zapGreen text-zapGreen px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen hover:text-white transition-all duration-300">
@@ -173,12 +172,27 @@
       </div>
       <!-- Indicador de scroll -->
       <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#convites" class="flex flex-col items-center text-zapGray/60 hover:text-zapGreen transition-colors">
+        <a href="#cardapio" class="flex flex-col items-center text-zapGray/60 hover:text-zapGreen transition-colors">
           <span class="text-sm font-medium mb-2">Descubra mais</span>
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </a>
+      </div>
+    </section>
+
+    <!-- Seção Cardápio Virtual - Apresentação -->
+    <section id="cardapio" class="py-16 lg:py-20 section-gradient">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center reveal">
+          <h2 class="text-3xl lg:text-5xl font-bold text-zapGray mb-6">
+            Cardápio 
+            <span class="text-zapGreen">Virtual</span>
+          </h2>
+          <p class="text-xl lg:text-2xl text-zapGray/70 max-w-4xl mx-auto font-light leading-relaxed">
+            Organizamos nossos produtos em categorias para que você encontre com facilidade as melhores opções para encantar seus clientes e convidados.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -709,8 +723,7 @@
         <!-- Logo e descrição -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-6">
-            <img src="public/assets/images/images/LOGO-VERDE.png" alt="Zap Gráfica" class="h-10 w-auto"/>
-            <span class="font-bold text-xl text-white">Zap Gráfica</span>
+            <img src="public/assets/images/images/LOGO-BRANCA.png" alt="Zap Gráfica" class="h-10 w-auto"/>
           </div>
           <p class="text-gray-400 max-w-md leading-relaxed">
             Especialistas em personalização para eventos e linha corporativa. 

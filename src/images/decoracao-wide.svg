@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="650" viewBox="0 0 1600 650">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f3f4f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="650" fill="url(#bg)"/>
+  <!-- Backdrop -->
+  <rect x="300" y="120" width="1000" height="360" rx="24" fill="#fff" stroke="#e5e7eb"/>
+  <rect x="300" y="160" width="1000" height="40" fill="#00AEEF" opacity=".15"/>
+  <!-- Balloons -->
+  <g>
+    <circle cx="370" cy="190" r="40" fill="#00AEEF"/>
+    <rect x="360" y="230" width="20" height="70" rx="10" fill="#94a3b8"/>
+    <circle cx="470" cy="170" r="36" fill="#F99D1C"/>
+    <rect x="460" y="206" width="20" height="70" rx="10" fill="#94a3b8"/>
+    <circle cx="560" cy="200" r="30" fill="#00d355"/>
+    <rect x="550" y="230" width="20" height="60" rx="10" fill="#94a3b8"/>
+  </g>
+  <!-- Floor decals -->
+  <rect x="360" y="420" width="880" height="14" rx="7" fill="#00AEEF" opacity=".25"/>
+  <rect x="360" y="450" width="700" height="10" rx="5" fill="#00d355" opacity=".25"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f3f4f6"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d355"/>
+      <stop offset="1" stop-color="#00AEEF"/>
+    </linearGradient>
+    <style>
+      .shadow { filter: drop-shadow(0 12px 24px rgba(0,0,0,.12)); }
+      .text { font-family: Inter, Arial, sans-serif; fill:#414042 }
+    </style>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <!-- Confetti -->
+  <g opacity=".7">
+    <circle cx="80" cy="120" r="6" fill="#00d355"/>
+    <circle cx="180" cy="90" r="4" fill="#F99D1C"/>
+    <circle cx="260" cy="160" r="5" fill="#00AEEF"/>
+    <circle cx="1120" cy="120" r="6" fill="#00d355"/>
+    <circle cx="1040" cy="90" r="4" fill="#F99D1C"/>
+    <circle cx="940" cy="160" r="5" fill="#00AEEF"/>
+  </g>
+  <!-- Stage card -->
+  <g class="shadow">
+    <rect x="150" y="170" rx="24" ry="24" width="900" height="480" fill="#fff" stroke="#e5e7eb"/>
+    <rect x="150" y="170" rx="24" ry="24" width="900" height="120" fill="url(#accent)"/>
+    <g transform="translate(200,220)">
+      <circle cx="0" cy="0" r="18" fill="#fff"/>
+      <rect x="32" y="-10" width="160" height="20" rx="10" fill="#fff"/>
+    </g>
+    <!-- icons row -->
+    <g transform="translate(220,360)">
+      <g>
+        <rect x="0" y="0" width="180" height="140" rx="16" fill="#f8fafc" stroke="#e5e7eb"/>
+        <path d="M30 60 h120" stroke="#00d355" stroke-width="6"/>
+        <rect x="30" y="30" width="120" height="80" rx="8" fill="none" stroke="#00d355" stroke-width="3"/>
+      </g>
+      <g transform="translate(220,0)">
+        <rect x="0" y="0" width="180" height="140" rx="16" fill="#f8fafc" stroke="#e5e7eb"/>
+        <circle cx="90" cy="70" r="42" fill="none" stroke="#F99D1C" stroke-width="6"/>
+        <rect x="60" y="40" width="60" height="60" rx="12" fill="none" stroke="#F99D1C" stroke-width="3"/>
+      </g>
+      <g transform="translate(440,0)">
+        <rect x="0" y="0" width="180" height="140" rx="16" fill="#f8fafc" stroke="#e5e7eb"/>
+        <path d="M60 96 l28 -56 l32 56 z" fill="#00AEEF" opacity=".25"/>
+        <path d="M60 96 l28 -56 l32 56 z" fill="none" stroke="#00AEEF" stroke-width="4"/>
+      </g>
+    </g>
+  </g>
+  <text x="50%" y="86%" text-anchor="middle" class="text" font-size="18">Imagem local otimizada para carregamento — 1200×800</text>
+</svg>
