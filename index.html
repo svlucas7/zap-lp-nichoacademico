@@ -66,8 +66,23 @@
         <nav class="hidden lg:block">
           <ul class="flex items-center gap-8 text-sm font-medium text-zapGray">
             <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#inicio">Início</a></li>
-            <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#personalizacao">Personalização</a></li>
-            <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#corporativa">Linha Corporativa</a></li>
+            <li class="relative group">
+              <a class="hover:text-zapGreen transition-colors duration-300 py-2 flex items-center gap-1" href="#personalizacao">
+                Cardápio Virtual
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </a>
+              <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="p-4 space-y-2">
+                  <a href="#personalizacao" class="block px-3 py-2 text-sm text-zapGray hover:text-zapGreen hover:bg-lightGray rounded-lg transition-colors">Convites & Identidade Visual</a>
+                  <a href="#personalizacao" class="block px-3 py-2 text-sm text-zapGray hover:text-zapGreen hover:bg-lightGray rounded-lg transition-colors">Decoração & Ambientação</a>
+                  <a href="#personalizacao" class="block px-3 py-2 text-sm text-zapGray hover:text-zapGreen hover:bg-lightGray rounded-lg transition-colors">Lembranças & Brindes</a>
+                  <a href="#personalizacao" class="block px-3 py-2 text-sm text-zapGray hover:text-zapGreen hover:bg-lightGray rounded-lg transition-colors">Interatividade & Experiência</a>
+                  <a href="#corporativa" class="block px-3 py-2 text-sm text-zapGray hover:text-zapGreen hover:bg-lightGray rounded-lg transition-colors">Linha Corporativa</a>
+                </div>
+              </div>
+            </li>
             <li><a class="hover:text-zapGreen transition-colors duration-300 py-2" href="#sobre">Sobre Nós</a></li>
             <li>
               <a class="bg-zapGreen text-white px-6 py-3 rounded-full font-semibold hover:bg-zapGreen/90 transition-colors duration-300 shadow-lg hover:shadow-xl" href="#contato">
@@ -83,8 +98,14 @@
       <nav id="mobileMenu" class="lg:hidden hidden pb-6">
         <ul class="grid gap-1 text-base font-medium text-zapGray">
           <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#inicio">Início</a></li>
-          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#personalizacao">Personalização</a></li>
-          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#corporativa">Linha Corporativa</a></li>
+          <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#personalizacao">Cardápio Virtual</a></li>
+          <li class="pl-4">
+            <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#personalizacao">• Convites & Identidade Visual</a>
+            <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#personalizacao">• Decoração & Ambientação</a>
+            <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#personalizacao">• Lembranças & Brindes</a>
+            <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#personalizacao">• Interatividade & Experiência</a>
+            <a class="block rounded-lg px-4 py-2 text-sm text-zapGray/70 hover:bg-lightGray transition-colors" href="#corporativa">• Linha Corporativa</a>
+          </li>
           <li><a class="block rounded-lg px-4 py-3 hover:bg-lightGray transition-colors" href="#sobre">Sobre Nós</a></li>
           <li class="pt-2">
             <a class="block bg-zapGreen text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-zapGreen/90 transition-colors" href="#contato">
@@ -105,17 +126,16 @@
           <div class="text-center lg:text-left space-y-8 animate-fade-in">
             <div class="space-y-6">
               <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-zapGray">
-                Personalização que
-                <span class="text-zapGreen block">Transforma</span>
+                🎉 Personalização que transforma eventos em
+                <span class="text-zapGreen block">experiências únicas!</span>
               </h1>
               <p class="text-xl lg:text-2xl text-zapGray/80 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Especialistas em criar experiências únicas para eventos e soluções corporativas. 
-                Design profissional, qualidade excepcional e prazos garantidos.
+                Seja para um casamento inesquecível, uma festa de 15 anos cheia de estilo, uma formatura memorável ou um evento corporativo de impacto, temos o cardápio mais completo de produtos personalizados para cerimonialistas. Do convite ao último brinde, cuidamos de cada detalhe para que sua celebração seja lembrada para sempre.
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="#personalizacao" class="bg-zapGreen text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Explore Nossos Serviços
+                ➡ Explore nosso cardápio virtual
               </a>
               <a href="#contato" class="border-2 border-zapGreen text-zapGreen px-8 py-4 rounded-full font-semibold text-lg hover:bg-zapGreen hover:text-white transition-all duration-300">
                 Solicitar Orçamento
@@ -147,11 +167,11 @@
         <!-- Cabeçalho da seção -->
         <div class="text-center mb-16 lg:mb-20 reveal">
           <h2 class="text-3xl lg:text-5xl font-bold text-zapGray mb-6">
-            Personalização de 
-            <span class="text-zapGreen">Eventos</span>
+            Cardápio 
+            <span class="text-zapGreen">Virtual</span>
           </h2>
           <p class="text-xl text-zapGray/70 max-w-3xl mx-auto font-light leading-relaxed">
-            Transformamos suas ideias em experiências inesquecíveis. Cada detalhe é pensado para criar momentos únicos e memoráveis.
+            Organizamos nossos produtos em categorias para que você encontre com facilidade as melhores opções para encantar seus clientes e convidados.
           </p>
         </div>
 
@@ -163,11 +183,20 @@
               <img src="public/assets/images/images/Convites - Identidade Visual.png" alt="Convites e Identidade Visual" class="w-full h-48 object-contain mx-auto"/>
             </div>
             <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
-              Convites & Identidade
+              Convites & Identidade Visual
             </h3>
-            <p class="text-zapGray/70 leading-relaxed">
-              Primeira impressão que marca. Convites elegantes, save the date e toda identidade visual do seu evento.
+            <p class="text-zapGray/70 leading-relaxed mb-4">
+              A primeira impressão do seu evento começa aqui. Criamos convites, menus e peças gráficas que traduzem o estilo e o tema da celebração, com impressão impecável e acabamentos diferenciados.
             </p>
+            <div class="text-sm text-zapGray/60 space-y-1">
+              <p>• Convites tradicionais ou digitais</p>
+              <p>• Save the date</p>
+              <p>• Menus personalizados</p>
+              <p>• Marcadores de mesa</p>
+              <p>• Tags e etiquetas</p>
+              <p>• Cartões de agradecimento</p>
+              <p>• Photobook</p>
+            </div>
           </div>
 
           <!-- Decoração & Ambientação -->
@@ -178,9 +207,18 @@
             <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
               Decoração & Ambientação
             </h3>
-            <p class="text-zapGray/70 leading-relaxed">
-              Transforme espaços em cenários únicos. Banners, totens, placas e elementos que criam atmosfera especial.
+            <p class="text-zapGray/70 leading-relaxed mb-4">
+              Transforme o espaço do seu evento em um cenário único. Nossos itens de ambientação personalizam cada detalhe, criando experiências visuais inesquecíveis.
             </p>
+            <div class="text-sm text-zapGray/60 space-y-1">
+              <p>• Placas de boas-vindas</p>
+              <p>• Adesivos de chão / pista de dança</p>
+              <p>• Banners e backdrops</p>
+              <p>• Totens e painéis de foto</p>
+              <p>• Adesivos para espelhos e vidros</p>
+              <p>• Balões personalizados</p>
+              <p>• Plaquinhas para fotos</p>
+            </div>
           </div>
 
           <!-- Lembranças & Brindes -->
@@ -191,9 +229,20 @@
             <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
               Lembranças & Brindes
             </h3>
-            <p class="text-zapGray/70 leading-relaxed">
-              Presentes que eternizam momentos. Canecas, almofadas, bem-casados e muito mais para seus convidados.
+            <p class="text-zapGray/70 leading-relaxed mb-4">
+              Presenteie seus convidados com lembranças que eternizam o momento. Cada brinde é pensado para transmitir carinho e deixar um toque especial na memória.
             </p>
+            <div class="text-sm text-zapGray/60 space-y-1">
+              <p>• Bem-casados com embalagem personalizada</p>
+              <p>• Caixinhas de doces</p>
+              <p>• Canecas e taças personalizadas</p>
+              <p>• Copos long drink / shots</p>
+              <p>• Almofadas e chinelos</p>
+              <p>• Necessaires e chaveiros</p>
+              <p>• Aromatizadores e velas</p>
+              <p>• Sabonetes artesanais</p>
+              <p>• Saquinhos de organza</p>
+            </div>
           </div>
 
           <!-- Interatividade & Experiência -->
@@ -204,9 +253,17 @@
             <h3 class="text-xl font-semibold text-zapGray mb-3 group-hover:text-zapGreen transition-colors">
               Interatividade & Experiência
             </h3>
-            <p class="text-zapGray/70 leading-relaxed">
-              Surpreenda seus convidados. Tatuagens temporárias, pulseiras, crachás e experiências inovadoras.
+            <p class="text-zapGray/70 leading-relaxed mb-4">
+              Mais do que um evento, uma vivência! Itens criativos que surpreendem e envolvem os convidados, tornando a festa ainda mais marcante.
             </p>
+            <div class="text-sm text-zapGray/60 space-y-1">
+              <p>• Pulseiras de LED</p>
+              <p>• Tatuagens temporárias personalizadas</p>
+              <p>• Crachás divertidos</p>
+              <p>• Kit ressaca</p>
+              <p>• Kit boas-vindas para hotel</p>
+              <p>• Kit conforto, higiene e infantil</p>
+            </div>
           </div>
         </div>
 
@@ -242,7 +299,7 @@
                 <span class="text-zapGreen">Corporativa</span>
               </h2>
               <p class="text-xl text-zapGray/70 font-light leading-relaxed">
-                Fortaleça a identidade da sua empresa com soluções personalizadas que impressionam clientes e colaboradores.
+                Soluções elegantes e funcionais para eventos empresariais e formaturas. Itens que fortalecem a marca e transmitem credibilidade.
               </p>
             </div>
 
@@ -255,8 +312,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-zapGray">Brindes Corporativos</h4>
-                  <p class="text-zapGray/70">Canetas, cadernos, pastas e materiais personalizados</p>
+                  <h4 class="font-semibold text-zapGray">Canetas e Material de Escritório</h4>
+                  <p class="text-zapGray/70">Canetas personalizadas, pastas, blocos e kits de escritório</p>
                 </div>
               </div>
               
@@ -267,8 +324,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-zapGray">Kits de Apresentação</h4>
-                  <p class="text-zapGray/70">Materiais profissionais que destacam sua marca</p>
+                  <h4 class="font-semibold text-zapGray">Credenciais e Identificação</h4>
+                  <p class="text-zapGray/70">Credenciais, crachás, lanyards e bottons personalizados</p>
                 </div>
               </div>
               
@@ -279,8 +336,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-zapGray">Soluções Sustentáveis</h4>
-                  <p class="text-zapGray/70">Produtos eco-friendly para empresas conscientes</p>
+                  <h4 class="font-semibold text-zapGray">Tecnologia e Brindes Premium</h4>
+                  <p class="text-zapGray/70">Power banks, pen drives, sacolas e caixas rígidas personalizadas</p>
                 </div>
               </div>
             </div>
@@ -311,11 +368,10 @@
                 <span class="text-zapGreen">Nós</span>
               </h2>
               <p class="text-xl text-zapGray/70 font-light leading-relaxed">
-                Somos a Zap Gráfica, especialistas em personalização que transformam ideias em experiências memoráveis. 
-                Com anos de experiência no mercado, atendemos cerimonialistas e empresas que buscam qualidade excepcional e prazos garantidos.
+                Especialistas em personalização para eventos, trabalhamos lado a lado com cerimonialistas para criar soluções criativas, funcionais e alinhadas ao perfil de cada celebração.
               </p>
               <p class="text-lg text-zapGray/60 leading-relaxed">
-                Nossa missão é ser seu parceiro confiável do briefing à entrega, criando produtos únicos que dão identidade às celebrações e fortalecem marcas.
+                Nossa missão é transformar ideias em produtos de alto impacto visual, que encantam e geram memórias inesquecíveis.
               </p>
             </div>
 
@@ -362,7 +418,7 @@
             <span class="text-zapGreen">Orçamento</span>
           </h2>
           <p class="text-xl text-zapGray/70 max-w-2xl mx-auto font-light leading-relaxed">
-            Preencha o formulário abaixo e nossa equipe retornará rapidamente com uma proposta personalizada para o seu projeto.
+            Conte-nos sobre o seu evento e enviaremos um orçamento personalizado em até 24h.
           </p>
         </div>
 
@@ -386,12 +442,14 @@
 
             <div class="grid md:grid-cols-3 gap-6 mb-6">
               <div>
-                <label class="block text-sm font-semibold text-zapGray mb-2">Tipo de Projeto</label>
+                <label class="block text-sm font-semibold text-zapGray mb-2">Tipo de Evento</label>
                 <select name="tipo" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-zapGreen focus:ring-2 focus:ring-zapGreen/20 transition-colors">
                   <option value="">Selecione...</option>
-                  <option value="Evento">Personalização de Evento</option>
-                  <option value="Corporativo">Linha Corporativa</option>
-                  <option value="Ambos">Ambos</option>
+                  <option value="Casamento">Casamento</option>
+                  <option value="15 Anos">Festa de 15 Anos</option>
+                  <option value="Formatura">Formatura</option>
+                  <option value="Corporativo">Evento Corporativo</option>
+                  <option value="Outro">Outro</option>
                 </select>
               </div>
               <div>
@@ -411,13 +469,13 @@
             </div>
 
             <div class="mb-6">
-              <label class="block text-sm font-semibold text-zapGray mb-2">Itens de Interesse</label>
-              <input name="itens" type="text" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-zapGreen focus:ring-2 focus:ring-zapGreen/20 transition-colors" placeholder="Ex: Convites, decoração, brindes..." />
+              <label class="block text-sm font-semibold text-zapGray mb-2">Lista de Itens de Interesse</label>
+              <input name="itens" type="text" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-zapGreen focus:ring-2 focus:ring-zapGreen/20 transition-colors" placeholder="Ex: Convites, decoração, brindes, lembranças..." />
             </div>
 
             <div class="mb-8">
-              <label class="block text-sm font-semibold text-zapGray mb-2">Detalhes do Projeto</label>
-              <textarea name="detalhes" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-zapGreen focus:ring-2 focus:ring-zapGreen/20 transition-colors" placeholder="Conte-nos mais sobre seu projeto, inspirações, prazos e outros detalhes importantes..."></textarea>
+              <label class="block text-sm font-semibold text-zapGray mb-2">Observações</label>
+              <textarea name="observacoes" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-zapGreen focus:ring-2 focus:ring-zapGreen/20 transition-colors" placeholder="Conte-nos mais sobre seu evento, inspirações, prazos e outros detalhes importantes..."></textarea>
             </div>
 
             <div class="text-center">
