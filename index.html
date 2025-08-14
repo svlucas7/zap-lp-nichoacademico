@@ -51,6 +51,27 @@
     .section-gradient { background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); }
     .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    
+    /* Animação de reveal mais confiável */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+    }
+    
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Fallback para garantir visibilidade */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+      }
+    }
   </style>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300d355'/><text x='50' y='58' text-anchor='middle' font-size='48' fill='white' font-family='Inter, sans-serif' font-weight='700'>Z</text></svg>">
 </head>

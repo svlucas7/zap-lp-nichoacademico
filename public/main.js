@@ -7,11 +7,11 @@ if (menuBtn && mobileMenu) {
   });
 }
 
-// Smooth reveal on scroll with modern animations
+// Smooth reveal on scroll - versão simplificada e confiável
 function handleReveal(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate-fade-in');
+      entry.target.classList.add('revealed');
       observer.unobserve(entry.target);
     }
   });
@@ -26,10 +26,15 @@ const revealObserver = new IntersectionObserver(handleReveal, {
 document.addEventListener('DOMContentLoaded', () => {
   const revealElements = document.querySelectorAll('.reveal');
   revealElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
     revealObserver.observe(el);
   });
+  
+  // Timer de segurança: após 3 segundos, revela todos os elementos não revelados
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
+      el.classList.add('revealed');
+    });
+  }, 3000);
 });
 
 // Current year in footer
