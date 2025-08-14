@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Optional: pretty URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301

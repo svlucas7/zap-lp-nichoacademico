@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html { scroll-behavior: smooth; }
+}
+
+/* Components */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-zapGreen px-5 py-3 text-white font-semibold shadow-sm transition-colors duration-200 hover:bg-zapOrange focus:outline-none focus:ring-2 focus:ring-zapGreen/40;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg bg-zapGreen px-4 py-2 text-white font-medium shadow-sm transition-colors duration-200 hover:bg-zapBlue;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-extrabold text-gray-900;
+  }
+  .section-subtitle {
+    @apply mt-2 text-gray-600 max-w-3xl;
+  }
+}
