@@ -18,6 +18,7 @@
             zapGreen: '#00d355',
             zapOrange: '#F99D1C',
             zapBlue: '#00AEEF',
+            zapGray: '#414042',
           },
           fontFamily: {
             sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans','sans-serif']
@@ -29,7 +30,7 @@
   <style>html{scroll-behavior:smooth}</style>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300d355'/><text x='50' y='58' text-anchor='middle' font-size='48' fill='white' font-family='Arial, sans-serif'>Z</text></svg>">
 </head>
-<body class="min-h-full font-sans text-gray-800 bg-gray-50">
+<body class="min-h-full font-sans text-zapGray bg-gray-50">
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -39,7 +40,7 @@
           <span class="font-extrabold tracking-tight hidden sm:inline">Zap Gráfica</span>
         </a>
         <nav class="hidden md:block">
-          <ul class="flex items-center gap-6 text-sm font-medium">
+          <ul class="flex items-center gap-6 text-sm font-medium text-zapGray">
             <li><a class="hover:text-zapGreen" href="#inicio">Início</a></li>
             <li><a class="hover:text-zapGreen" href="#cardapio">Cardápio Virtual</a></li>
             <li><a class="hover:text-zapGreen" href="#convites">Convites & Identidade</a></li>
@@ -57,7 +58,7 @@
         </button>
       </div>
       <nav id="mobileMenu" class="md:hidden hidden pb-4">
-        <ul class="grid gap-2 text-sm font-medium">
+        <ul class="grid gap-2 text-sm font-medium text-zapGray">
           <li><a class="block rounded-md px-3 py-2 hover:bg-gray-100" href="#inicio">Início</a></li>
           <li><a class="block rounded-md px-3 py-2 hover:bg-gray-100" href="#cardapio">Cardápio Virtual</a></li>
           <li><a class="block rounded-md px-3 py-2 hover:bg-gray-100" href="#convites">Convites & Identidade</a></li>
@@ -92,7 +93,7 @@
             </div>
           </div>
           <div class="reveal">
-            <img src="https://source.unsplash.com/1200x800/?event,celebration,ceremony" alt="Mesa posta decorada para evento, com iluminação e clima de celebração" class="w-full rounded-xl shadow-sm ring-1 ring-black/5" loading="lazy" decoding="async" />
+            <img src="https://source.unsplash.com/1200x800/?event,celebration,ceremony" onerror="this.onerror=null;this.src='https://placehold.co/1200x800?text=Imagem+indispon%C3%ADvel';" alt="Mesa posta decorada para evento, com iluminação e clima de celebração" class="w-full rounded-xl shadow-sm ring-1 ring-black/5" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -137,7 +138,7 @@
             <div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapGreen"><path d="M4 6h16v12H4zM8 10h8v2H8zM8 14h5v2H8z"/></svg><h4 class="font-semibold">Photobook</h4></div>
           </div>
         </div>
-        <img src="https://source.unsplash.com/1600x650/?wedding,invitation,stationery" alt="Convites e papelaria personalizada para eventos" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+        <img src="https://source.unsplash.com/1600x650/?wedding,invitation,stationery" onerror="this.onerror=null;this.src='https://placehold.co/1600x650?text=Imagem+indispon%C3%ADvel';" alt="Convites e papelaria personalizada para eventos" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -157,7 +158,7 @@
           <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M7 10a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z"/></svg><h4 class="font-semibold">Balões personalizados</h4></div></div>
           <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapBlue"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M6 16h12M6 8h12" /></svg><h4 class="font-semibold">Plaquinhas para fotos</h4></div></div>
         </div>
-        <img src="https://source.unsplash.com/1600x650/?wedding,decor,backdrop" alt="Cenário decorado com elementos de ambientação para eventos" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+        <img src="https://source.unsplash.com/1600x650/?wedding,decor,backdrop" onerror="this.onerror=null;this.src='https://placehold.co/1600x650?text=Imagem+indispon%C3%ADvel';" alt="Cenário decorado com elementos de ambientação para eventos" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -182,7 +183,7 @@
           <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Saquinhos de organza</h4></div></div>
           <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapOrange"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Embalagens para doces e lembranças</h4></div></div>
         </div>
-        <img src="https://source.unsplash.com/1600x650/?wedding,favors,gifts" alt="Lembranças e brindes personalizados expostos em mesa" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+        <img src="https://source.unsplash.com/1600x650/?wedding,favors,gifts" onerror="this.onerror=null;this.src='https://placehold.co/1600x650?text=Imagem+indispon%C3%ADvel';" alt="Lembranças e brindes personalizados expostos em mesa" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -200,7 +201,7 @@
           <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Kit de sobrevivência para eventos</h4></div></div>
           <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zapGreen"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg><h4 class="font-semibold">Experiências de realidade aumentada</h4></div></div>
         </div>
-        <img src="https://source.unsplash.com/1600x650/?party,led,bracelets" alt="Itens interativos e de experiência para animar convidados" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+        <img src="https://source.unsplash.com/1600x650/?party,led,bracelets" onerror="this.onerror=null;this.src='https://placehold.co/1600x650?text=Imagem+indispon%C3%ADvel';" alt="Itens interativos e de experiência para animar convidados" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -220,7 +221,7 @@
           <div class="reveal bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4z"/></svg><h4 class="font-semibold">Brindes sustentáveis</h4></div></div>
           <div class="reveal sm:col-span-2 lg:col-span-3 bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md hover:scale-[1.02]"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-zapBlue"><path d="M4 6h16v12H4zM8 10h8v2H8zM8 14h5v2H8z"/></svg><h4 class="font-semibold">Pasta para notebook</h4></div></div>
         </div>
-        <img src="https://source.unsplash.com/1600x650/?corporate,branding,stationery" alt="Materiais corporativos personalizados e elegantes" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
+        <img src="https://source.unsplash.com/1600x650/?corporate,branding,stationery" onerror="this.onerror=null;this.src='https://placehold.co/1600x650?text=Imagem+indispon%C3%ADvel';" alt="Materiais corporativos personalizados e elegantes" class="mt-8 w-full rounded-xl shadow-sm ring-1 ring-black/5 reveal" loading="lazy" decoding="async">
       </div>
     </section>
 

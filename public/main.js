@@ -8,7 +8,6 @@ if (menuBtn && mobileMenu) {
 }
 
 // Smooth reveal on scroll
-const observers = [];
 function handleReveal(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -20,7 +19,6 @@ function handleReveal(entries, observer) {
 }
 
 const io = new IntersectionObserver(handleReveal, { threshold: 0.15 });
-
 Array.from(document.querySelectorAll('.reveal')).forEach(el => {
   el.classList.add('opacity-0', 'translate-y-4', 'transition', 'duration-700');
   io.observe(el);
@@ -43,3 +41,21 @@ if (form) {
     form.reset();
   });
 }
+
+// Image fallback: aplica a todas as imagens externas que falharem
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach(img => {
+    const isExternal = /^https?:\/\//.test(img.src);
+    if (isExternal) {
+      const w = img.getAttribute('width') || 1200;
+      const h = img.getAttribute('height') || 650;
+      const place = `https://placehold.co/${w}x${h}?text=Imagem+indispon%C3%ADvel`;
+      img.addEventListener('error', () => {
+        if (!img.dataset.fallbackApplied) {
+          img.dataset.fallbackApplied = '1';
+          img.src = place;
+        }
+      }, { once: true });
+    }
+  });
+});
