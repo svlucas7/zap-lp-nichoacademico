@@ -28,19 +28,25 @@ Array.from(document.querySelectorAll('.reveal')).forEach(el => {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Dummy form handler (replace with RD Station embed later)
+// Netlify forms: se houve redirect com ?sucesso=1, mostra confirmação
+const params = new URLSearchParams(window.location.search);
 const form = document.getElementById('orcamento-form');
 const formMsg = document.getElementById('formMsg');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (formMsg) {
-      formMsg.className = 'mt-3 text-green-700 bg-green-50 border border-green-200 rounded-md p-3';
-      formMsg.textContent = 'Obrigado! Em breve entraremos em contato. (Substitua por seu formulário do RD Station)';
-    }
-    form.reset();
-  });
+if (params.get('sucesso') === '1' && formMsg) {
+  formMsg.className = 'mt-3 text-green-700 bg-green-50 border border-green-200 rounded-md p-3';
+  formMsg.textContent = 'Obrigado! Recebemos seu pedido e retornaremos em breve.';
 }
+// Se quiser usar handler manual (sem Netlify), remova data-netlify do form no HTML e descomente abaixo
+// if (form) {
+//   form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     if (formMsg) {
+//       formMsg.className = 'mt-3 text-green-700 bg-green-50 border border-green-200 rounded-md p-3';
+//       formMsg.textContent = 'Obrigado! Em breve entraremos em contato.';
+//     }
+//     form.reset();
+//   });
+// }
 
 // Image fallback: aplica a todas as imagens externas que falharem
 window.addEventListener('DOMContentLoaded', () => {
