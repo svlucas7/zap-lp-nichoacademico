@@ -176,8 +176,22 @@
     }
     
     .hero-image-container:hover .hero-main-image {
-      transform: rotate(0deg) scale(1.05) translateZ(50px);
+      transform: rotate(-3deg) scale(1.05) translateZ(50px);
       box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Animações para imagens das seções */
+    .section-image-container {
+      transition: all 0.3s ease;
+    }
+    
+    .section-image-container:hover .section-image {
+      transform: rotate(-2deg) scale(1.03);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 16px 32px -16px rgba(0, 0, 0, 0.3);
+    }
+    
+    .section-image {
+      transition: all 0.7s ease;
     }
     
     /* Fallback para garantir visibilidade */
@@ -288,7 +302,7 @@
             <div class="relative hero-image-container group">
               <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-6 animate-float hero-background-1 transition-all duration-700"></div>
               <div class="absolute inset-0 bg-zapGreen/5 rounded-3xl transform -rotate-2 animate-float opacity-50 hero-background-2 transition-all duration-500" style="animation-delay: 0.5s;"></div>
-              <img src="public/assets/images/images/Personalização que transforma.png" alt="Personalização que transforma eventos" class="relative w-full max-w-lg h-auto rounded-3xl shadow-2xl transform -rotate-3 hero-main-image transition-all duration-700"/>
+              <img src="public/assets/images/images/Personalização que transforma.png" alt="Personalização que transforma eventos" class="relative w-full max-w-lg h-auto rounded-3xl shadow-2xl hero-main-image transition-all duration-700"/>
             </div>
           </div>
         </div>
@@ -387,9 +401,9 @@
           
           <!-- Imagem -->
           <div class="reveal">
-            <div class="relative">
+            <div class="relative section-image-container">
               <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-3 animate-float"></div>
-              <img src="public/assets/images/images/Convites - Identidade Visual.png" alt="Convites e Identidade Visual" class="relative w-full h-auto rounded-3xl shadow-2xl"/>
+              <img src="public/assets/images/images/Convites - Identidade Visual.png" alt="Convites e Identidade Visual" class="relative w-full h-auto rounded-3xl shadow-2xl section-image"/>
             </div>
           </div>
         </div>
@@ -402,9 +416,9 @@
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Imagem -->
           <div class="order-2 lg:order-1 reveal">
-            <div class="relative">
+            <div class="relative section-image-container">
               <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform -rotate-3 animate-float"></div>
-              <img src="public/assets/images/images/Decoração - Ambientação.png" alt="Decoração e Ambientação" class="relative w-full h-auto rounded-3xl shadow-2xl"/>
+              <img src="public/assets/images/images/Decoração - Ambientação.png" alt="Decoração e Ambientação" class="relative w-full h-auto rounded-3xl shadow-2xl section-image"/>
             </div>
           </div>
           
@@ -541,9 +555,9 @@
           
           <!-- Imagem -->
           <div class="reveal">
-            <div class="relative">
+            <div class="relative section-image-container">
               <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-3 animate-float"></div>
-              <img src="public/assets/images/images/Lembranças - Brindes.png" alt="Lembranças e Brindes" class="relative w-full h-auto rounded-3xl shadow-2xl"/>
+              <img src="public/assets/images/images/Lembranças - Brindes.png" alt="Lembranças e Brindes" class="relative w-full h-auto rounded-3xl shadow-2xl section-image"/>
             </div>
           </div>
         </div>
@@ -556,9 +570,9 @@
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Imagem -->
           <div class="order-2 lg:order-1 reveal">
-            <div class="relative">
+            <div class="relative section-image-container">
               <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform -rotate-3 animate-float"></div>
-              <img src="public/assets/images/images/Interatividade - Experiência.png" alt="Interatividade e Experiência" class="relative w-full h-auto rounded-3xl shadow-2xl"/>
+              <img src="public/assets/images/images/Interatividade - Experiência.png" alt="Interatividade e Experiência" class="relative w-full h-auto rounded-3xl shadow-2xl section-image"/>
             </div>
           </div>
           
@@ -695,9 +709,9 @@
           
           <!-- Imagem -->
           <div class="reveal">
-            <div class="relative">
+            <div class="relative section-image-container">
               <div class="absolute inset-0 bg-zapGreen/10 rounded-3xl transform rotate-3 animate-float"></div>
-              <img src="public/assets/images/images/Linha Corporativa.png" alt="Linha Corporativa" class="relative w-full h-auto rounded-3xl shadow-2xl"/>
+              <img src="public/assets/images/images/Linha Corporativa.png" alt="Linha Corporativa" class="relative w-full h-auto rounded-3xl shadow-2xl section-image"/>
             </div>
           </div>
         </div>
@@ -737,7 +751,7 @@
 -->
             <!-- CTA -->
             <div>
-              <a href="#contato" class="btn-primary">
+              <a href="#contato" class="btn-primary inline-flex items-center">
                 <span>Vamos Conversar</span>
                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
