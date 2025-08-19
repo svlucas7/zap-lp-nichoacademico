@@ -1,27 +1,33 @@
-# Zap Gráfica – Landing Page (Cerimonialistas)
+# Zap Gráfica – Landing Page para Cerimonialistas
 
-Projeto da landing page responsiva feita com HTML5 + Tailwind CSS + JavaScript.
+Landing page desenvolvida por mim para o nicho de cerimonialistas, publicada no Netlify e disponível neste repositório como parte do meu portfólio.
 
-## Como funciona o build (Netlify)
-- Já existe um `netlify.toml` configurado para:
-  - `command = "npm run build"`
-  - `publish = "."`
-  - `NODE_VERSION = 20`
-- O Tailwind é compilado na hospedagem (CI do Netlify) e o CSS final é gerado em `public/styles.css`.
+## Sobre o projeto
+Esta landing page foi criada para apresentar os serviços da Zap Gráfica de forma moderna, responsiva e otimizada para conversão. Utilizei HTML5, Tailwind CSS e JavaScript, com animações suaves, integração com RD Station e foco em experiência mobile.
 
-## Estrutura
-- `index.html` – Página única com todas as seções e textos solicitados
-- `public/main.js` – Menu mobile, animações de entrada e feedback do formulário
-- `src/input.css` – Fonte do Tailwind (usa @tailwind e @apply)
-- `tailwind.config.js` – Paleta de cores: `zapGreen`, `zapOrange`, `zapBlue`
-- `postcss.config.js`, `package.json`, `.gitignore`, `netlify.toml`
+## Tecnologias e diferenciais
+- **HTML5 semântico**
+- **Tailwind CSS** para agilidade e design responsivo
+- **JavaScript** para interatividade, animações e PWA
+- **Service Worker** para navegação offline
+- **Integração RD Station** para captação de leads
+- **Hospedagem Netlify** (link abaixo)
+- **Documentação e organização** seguindo boas práticas
 
-## Deploy no Netlify (passos)
-1. Suba o repositório para o GitHub (branch `main`).
-2. Em https://app.netlify.com > Add new site > Import from Git > escolha este repositório.
-3. Build command: `npm run build` (já definido no `netlify.toml`). Publish directory: `.` (raiz do projeto).
-4. Deploy. Ao finalizar, acesse a URL para ver a landing page.
+## Estrutura do projeto
+- `index.html`: Página principal
+- `public/`: Scripts, service worker, imagens
+- `src/input.css`: CSS customizado
+- `docs/`: Documentação extra
+- Configurações: `netlify.toml`, `package.json`, `postcss.config.js`, `tailwind.config.js`
 
-## Observações
-- Quando quiser trocar o formulário pelo RD Station, substitua o `<form id="orcamento-form">` no `index.html` pelo embed do RD.
-- A página é mobile-first e utiliza animações suaves via Tailwind (transition/transform) e IntersectionObserver.
+## Links
+- 🔗 [Site publicado no Netlify](https://zapcerimonial.netlify.app/)
+- 💻 [Repositório no GitHub](https://github.com/svlucas7/zap-lp-nicho-cerimonial)
+
+## Meu objetivo
+Este projeto demonstra minha capacidade de criar landing pages profissionais, organizadas e prontas para conversão, com código limpo, responsivo e fácil de manter.
+
+---
+
+> Projeto desenvolvido e mantido por Lucas Silva. Todos os direitos reservados.

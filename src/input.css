@@ -1,3 +1,9 @@
+/*
+Zap Gráfica – Landing Page
+Arquivo de estilos base para Tailwind CSS e componentes customizados.
+Use este arquivo para centralizar customizações e facilitar manutenção.
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,18 +15,23 @@
 
 /* Components */
 @layer components {
+  /* Botão principal: usado em CTAs e formulários */
   .btn-primary {
     @apply inline-flex items-center justify-center rounded-lg bg-zapGreen px-5 py-3 text-white font-semibold shadow-sm transition-colors duration-200 hover:bg-zapOrange focus:outline-none focus:ring-2 focus:ring-zapGreen/40;
   }
+  /* Botão secundário: usado em ações alternativas */
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-lg bg-zapGreen px-4 py-2 text-white font-medium shadow-sm transition-colors duration-200 hover:bg-zapBlue;
   }
+  /* Card: usado para blocos de conteúdo */
   .card {
     @apply bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-md;
   }
+  /* Título de seção */
   .section-title {
     @apply text-2xl md:text-3xl font-extrabold text-gray-900;
   }
+  /* Subtítulo de seção */
   .section-subtitle {
     @apply mt-2 text-gray-600 max-w-3xl;
   }
