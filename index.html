@@ -4,6 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zap Gráfica | Personalização que Transforma</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KCGNMGLN');</script>
+  <!-- End Google Tag Manager -->
   <meta name="description" content="Especialistas em personalização para eventos e linha corporativa. Design profissional, qualidade excepcional e prazos garantidos." />
   
   <!-- Favicon -->
@@ -395,6 +402,10 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300d355'/><text x='50' y='58' text-anchor='middle' font-size='48' fill='white' font-family='Inter, sans-serif' font-weight='700'>Z</text></svg>">
 </head>
 <body class="min-h-full font-sans text-zapGray bg-white">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCGNMGLN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
   
@@ -996,7 +1007,19 @@
           <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 reveal">
             <div role="main" id="formulario-lp-zap-cerimonial-ad949874cc1493414caa"></div>
             <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
-            <script type="text/javascript"> new RDStationForms('formulario-lp-zap-cerimonial-ad949874cc1493414caa', 'UA-26024689-3').createForm();</script>
+            <script type="text/javascript"> 
+              new RDStationForms('formulario-lp-zap-cerimonial-ad949874cc1493414caa', 'UA-26024689-3').createForm();
+              // GTM evento de envio de formulário
+              document.addEventListener('rdstationFormsSubmission', function(e) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'form_submit',
+                  eventCategory: 'Formulário',
+                  eventAction: 'Envio',
+                  eventLabel: 'Orçamento Cerimonial'
+                });
+              });
+            </script>
           </div>
         </div>
       </div>
@@ -1059,7 +1082,7 @@
           <h4 class="font-semibold text-white mb-4">Contato</h4>
           <div class="space-y-3 text-sm text-gray-400">
             <p>Email: atendimento@zapgrafica.com.br</p>
-            <p>WhatsApp: <a href="https://wa.me/553125666500?text=Transforme%20eventos%20em%20experi%C3%AAncias%20com%20a%20ZAP%21" target="_blank" rel="noopener noreferrer" class="underline text-zapGreen">(31) 2566-6500</a></p>
+            <p>WhatsApp: <a href="https://wa.me/553125666500?text=Transforme%20eventos%20em%20experi%C3%AAncias%20com%20a%20ZAP%21" target="_blank" rel="noopener noreferrer" class="underline text-zapGreen" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({event: 'whatsapp_click', eventCategory: 'Contato', eventAction: 'Clique WhatsApp', eventLabel: 'Rodapé'});">(31) 2566-6500</a></p>
             <p>Endereço: R. Curitiba, 1582-05</p>
             <p>Lourdes, Belo Horizonte - MG</p>
             <a href="#contato" class="inline-block bg-zapGreen text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-zapGreen/90 transition-colors mt-4 text-center">
