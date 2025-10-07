@@ -1,9 +1,9 @@
-# Zap Gráfica – Landing Page para Cerimonialistas
+# Portfólio – Landing Page para Cerimonialistas
 
 Landing page desenvolvida por mim para o nicho de cerimonialistas, publicada no Netlify e disponível neste repositório como parte do meu portfólio.
 
 ## Sobre o projeto
-Esta landing page foi criada para apresentar os serviços da Zap Gráfica de forma moderna, responsiva e otimizada para conversão. Utilizei HTML5, Tailwind CSS e JavaScript, com animações suaves, integração com RD Station e foco em experiência mobile.
+Esta landing page foi criada para apresentar serviços e produtos gráficos de forma moderna, responsiva e otimizada para portfólio. Utilizei HTML5, Tailwind CSS e JavaScript, com animações suaves, PWA básico e foco em experiência mobile.
 
 ## Tecnologias e diferenciais
 - **HTML5 semântico**
@@ -22,8 +22,7 @@ Esta landing page foi criada para apresentar os serviços da Zap Gráfica de for
 - Configurações: `netlify.toml`, `package.json`, `postcss.config.js`, `tailwind.config.js`
 
 ## Links
-- 🔗 [Site publicado no Netlify](https://zapcerimonial.netlify.app/)
-- 💻 [Repositório no GitHub](https://github.com/svlucas7/zap-lp-nicho-cerimonial)
+> Se desejar publicar, adicione aqui o link público e o repositório correspondente.
 
 ## Meu objetivo
 Este projeto demonstra minha capacidade de criar landing pages profissionais, organizadas e prontas para conversão, com código limpo, responsivo e fácil de manter.

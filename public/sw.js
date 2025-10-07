@@ -1,5 +1,5 @@
-// Service Worker para Cache Offline - Zap Gráfica
-const CACHE_NAME = 'zap-grafica-v1';
+// Service Worker para Cache Offline - Portfólio Acadêmico
+const CACHE_NAME = 'portfolio-academico-v1';
 const urlsToCache = [
   '/',
   '/index.html',

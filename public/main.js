@@ -1,4 +1,6 @@
 // Enhanced Main JavaScript with Advanced Features
+// Mark document as JS-enabled to allow gated animations/styles
+document.documentElement.classList.add('js-enabled');
 // Mobile menu toggle
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -43,43 +45,7 @@ function initBackToTop() {
   window.addEventListener('scroll', toggleBackToTop);
 }
 
-// Lazy Loading for Images
-function initLazyLoading() {
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-        img.setAttribute('data-loaded', 'true');
-        observer.unobserve(img);
-      }
-    });
-  }, {
-    rootMargin: '50px 0px',
-    threshold: 0.01
-  });
-  
-  lazyImages.forEach(img => imageObserver.observe(img));
-}
-
-// Parallax Effect
-function initParallax() {
-  const parallaxElements = document.querySelectorAll('.parallax-bg');
-  
-  function updateParallax() {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    
-    parallaxElements.forEach(element => {
-      element.style.transform = `translateY(${rate}px)`;
-    });
-  }
-  
-  window.addEventListener('scroll', updateParallax);
-}
+// Lazy Loading e Parallax removidos (uso de loading="lazy" nativo e design minimalista)
 
 // Smooth reveal on scroll - enhanced version
 function handleReveal(entries, observer) {
@@ -99,7 +65,7 @@ const revealObserver = new IntersectionObserver(handleReveal, {
 // Service Worker Registration
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
+  navigator.serviceWorker.register('/sw.js')
       .then(registration => {
         console.log('SW registered successfully');
       })
@@ -126,9 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize new features
   initBackToTop();
-  initLazyLoading();
-  initParallax();
   registerServiceWorker();
+  initBlurUp();
+  initProductFilters();
+  initLightbox();
+  initCarousel();
 });
 
 // Scroll event listener for progress bar
@@ -155,32 +123,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      const headerHeight = 80; // Height of fixed header
+      const headerHeight = 0; // header removido
       const targetPosition = target.offsetTop - headerHeight;
       
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
       });
-      
-      // Close mobile menu if open
-      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('hidden');
-      }
+      // Header/nav removidos: sem atualização de aria-current/fechamento de menu
     }
   });
 });
 
-// Enhanced card hover effects
-document.querySelectorAll('.card-hover').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transform = 'translateY(-8px) scale(1.02)';
-  });
-  
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'translateY(0) scale(1)';
-  });
-});
+// Lógica de nav ativo removida (sem header/nav principal)
+
+// Card hover effects minimalistas (controlados por CSS)
 
 // Enhanced form submission with loading states
 if (form) {
@@ -197,4 +154,108 @@ if (form) {
       }, 5000);
     }
   });
+}
+
+// Auto-hide Header removido
+
+// Remove blur-up effect when images finish loading
+function initBlurUp() {
+  const images = Array.from(document.querySelectorAll('img.blur-up'));
+  if (!images.length) return;
+
+  images.forEach((img) => {
+    const markLoaded = () => img.classList.add('loaded');
+    if (img.complete && img.naturalWidth > 0) {
+      // Already loaded from cache
+      markLoaded();
+    } else {
+      img.addEventListener('load', markLoaded, { once: true });
+      img.addEventListener('error', markLoaded, { once: true });
+      // Try decoding for browsers that support it
+      if (typeof img.decode === 'function') {
+        img.decode().then(markLoaded).catch(() => {});
+      }
+    }
+  });
+}
+
+// Filtros de produtos por categoria
+function initProductFilters() {
+  const toolbar = document.getElementById('productFilter');
+  if (!toolbar) return;
+  const cards = Array.from(document.querySelectorAll('[data-category]'));
+
+  toolbar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-filter]');
+    if (!btn) return;
+
+    const filter = btn.getAttribute('data-filter');
+    // Toggle pressed state
+    toolbar.querySelectorAll('button[data-filter]').forEach(b => {
+      const isActive = b === btn;
+      b.setAttribute('aria-pressed', String(isActive));
+      b.classList.toggle('bg-zapGreen', isActive);
+      b.classList.toggle('text-white', isActive);
+      b.classList.toggle('ring-zapGreen', isActive);
+      b.classList.toggle('text-zapGray', !isActive);
+      b.classList.toggle('ring-gray-200', !isActive);
+    });
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const show = filter === 'todos' || cat === filter;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+}
+
+// Lightbox para imagens dos cards
+function initLightbox() {
+  const modal = document.getElementById('lightbox');
+  const imgEl = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (!modal || !imgEl || !closeBtn) return;
+
+  function open(src, alt) {
+    imgEl.src = src;
+    imgEl.alt = alt || 'Visualização do produto';
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('no-scroll');
+  }
+
+  function close() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('no-scroll');
+    imgEl.src = '';
+  }
+
+  // Clique/teclado nas imagens dos cards (Produtos e Destaques)
+  document.querySelectorAll('#produtos img, #destaques img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => open(img.src, img.alt));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open(img.src, img.alt);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+}
+
+// Carousel simples com scroll-snap
+function initCarousel() {
+  const el = document.getElementById('destaquesCarousel');
+  const prev = document.getElementById('destaquesPrev');
+  const next = document.getElementById('destaquesNext');
+  if (!el || !prev || !next) return;
+
+  const step = () => Math.min(400, Math.max(240, el.clientWidth * 0.5));
+  prev.addEventListener('click', () => el.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => el.scrollBy({ left: step(), behavior: 'smooth' }));
 }
