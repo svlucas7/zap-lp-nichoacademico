@@ -339,19 +339,19 @@
     
     @keyframes bounce-gentle {
       0%, 20%, 50%, 80%, 100% { 
-        transform: translateX(-50%) translateY(0); 
+        transform: translateY(0); 
       }
       40% { 
-        transform: translateX(-50%) translateY(-8px); 
+        transform: translateY(-8px); 
       }
       60% { 
-        transform: translateX(-50%) translateY(-4px); 
+        transform: translateY(-4px); 
       }
     }
     
     .scroll-indicator:hover {
       animation: none;
-      transform: translateX(-50%) translateY(-2px);
+      transform: translateY(-2px);
     }
     
     .scroll-indicator svg {
@@ -493,7 +493,7 @@
         </div>
       </div>
       <!-- Indicador de scroll -->
-      <div class="absolute left-1/2 -translate-x-1/2 bottom-6 md:bottom-10 z-20">
+      <div class="absolute left-1/2 transform -translate-x-1/2 bottom-6 md:bottom-10 z-20">
         <a href="#produtos" class="scroll-indicator flex flex-col items-center text-zapGray/60 hover:text-zapGreen transition-colors">
           <span class="hidden md:inline text-sm font-medium mb-2">Descubra mais</span>
           <svg class="w-6 h-6 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
