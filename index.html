@@ -21,14 +21,14 @@
   <meta property="og:url" content="/">
   <meta property="og:title" content="Portfólio | Produtos Gráficos para Eventos Acadêmicos">
   <meta property="og:description" content="Linha completa para eventos universitários: abadás, cordões, copos, taças, ingressos, pulseiras e muito mais. Personalização que transforma experiências em memórias!">
-  <meta property="og:image" content="public/assets/images/Personalização que transforma.png">
+  <meta property="og:image" content="public/assets/images/Personalização que transforma.jpeg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="/">
   <meta property="twitter:title" content="Portfólio | Produtos Gráficos para Eventos Acadêmicos">
   <meta property="twitter:description" content="Linha completa para eventos universitários com personalização de alto impacto: abadás, cordões, copos, taças, ingressos, pulseiras, backdrops e mais.">
-  <meta property="twitter:image" content="public/assets/images/Personalização que transforma.png">
+  <meta property="twitter:image" content="public/assets/images/Personalização que transforma.jpeg">
   
   <!-- Schema.org markup -->
   <script type="application/ld+json">
@@ -66,7 +66,7 @@
   </script>
   <!-- Canonical e Preload -->
   <link rel="canonical" href="/" />
-  <link rel="preload" as="image" href="public/assets/images/Personalização que transforma.png" />
+  <link rel="preload" as="video" href="public/assets/images/academicos/video01.mp4" type="video/mp4" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -389,6 +389,10 @@
       .btn-primary, .btn-secondary {
         transform: none !important;
       }
+      /* Pause hero video for reduced motion preference */
+      #heroVideo {
+        animation: none !important;
+      }
     }
 
     /* Editorial tweaks: tipografia e ritmo */
@@ -487,7 +491,17 @@
           </div>
           <div class="flex justify-center lg:justify-end animate-slide-up">
             <div class="relative hero-image-container group">
-              <img src="public/assets/images/Personalização que transforma.png" alt="Personalização que transforma eventos" class="relative w-full max-w-lg h-auto rounded-3xl ring-1 ring-gray-200 hero-main-image transition-all duration-500 blur-up" decoding="async" fetchpriority="high" sizes="(min-width: 1024px) 40vw, 90vw"/>
+    <video id="heroVideo"
+      class="relative w-full max-w-xl rounded-3xl ring-1 ring-gray-200 transition-opacity duration-300 opacity-0"
+                     autoplay
+                     muted
+                     loop
+                     playsinline
+      preload="auto"
+                     aria-label="Vídeo: personalização que transforma eventos">
+                <source src="public/assets/images/academicos/video01.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeo HTML5.
+              </video>
             </div>
           </div>
         </div>
@@ -732,6 +746,22 @@
   </footer>
 
   <script src="public/main.js"></script>
+  <script>
+    // Reveal hero video only when it can play to avoid flashing fallback
+    (function(){
+      const v = document.getElementById('heroVideo');
+      if (!v) return;
+      const show = () => {
+        v.classList.remove('opacity-0');
+        v.classList.add('opacity-100');
+      };
+      v.addEventListener('canplay', show, { once: true });
+      // Safety: if it doesn't fire quickly (e.g., cached), force show after short delay
+      setTimeout(() => {
+        if (v.classList.contains('opacity-0')) show();
+      }, 600);
+    })();
+  </script>
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 hidden items-center justify-center z-[10000] lightbox-backdrop">
